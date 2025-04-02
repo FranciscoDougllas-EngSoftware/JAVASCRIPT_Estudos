@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Classes</title>
+    <style>
+        .destaque {
+            color: white;
+            background-color: blue;
+            font-weight: bold;
+        }
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Classes e Elementos</h1>
+
+    <div class="pag">
+        <h2>Manipulando Classes</h2>
+        <p id="paragrafo">Esse parágrafo vai mudar de cor.</p>
+        <p class="paragrafo">Esse parágrafo também vai mudar de cor.</p>
+        <p class="paragrafo">Esse parágrafo também vai mudar de cor.</p>
+        <p class="paragrafo">Esse parágrafo também vai mudar de cor.</p>
+    </div>
+    <button id="adicionarClasse">Adicionar Classe</button>
+    <button id="removerClasse">Remover Classe</button>
+    <button id="alternarClasse">Alternar Classe</button>
+    <button id="verificarClasse">Verificar Classe</button>
+
+    <script>
+        // Selecionando elementos
+        const paragrafo = document.getElementById("paragrafo");
+        const paragrafos = document.querySelectorAll(".paragrafo");
+
+        const btnAdicionar = document.getElementById("adicionarClasse");
+        const btnRemover = document.getElementById("removerClasse");
+        const btnAlternar = document.getElementById("alternarClasse");
+        const btnVerificar = document.getElementById("verificarClasse");
+
+        // Adicionar uma classe
+        btnAdicionar.addEventListener("click", function() {
+            paragrafo.classList.add("destaque"); // Adiciona a classe "destaque" ao parágrafo
+            paragrafos.forEach(p => p.classList.add("destaque")); // Adiciona a classe a todos os parágrafos
+        });
+
+        // Remover uma classe
+        btnRemover.addEventListener("click", function() {
+            paragrafo.classList.remove("destaque"); // Remove a classe "destaque" do parágrafo
+            paragrafos.forEach(p => p.classList.remove("destaque")); // Remove a classe de todos os parágrafos
+        });
+
+        // Alternar uma classe (adiciona se não existir, remove se já existir)
+        btnAlternar.addEventListener("click", function() {
+            paragrafo.classList.toggle("destaque"); // Alterna a classe "destaque" no parágrafo
+            paragrafos.forEach(p => p.classList.toggle("destaque")); // Alterna a classe em todos os parágrafos
+        });
+
+        // Verificar se um elemento possui uma classe
+        btnVerificar.addEventListener("click", function() {
+            if (paragrafo.classList.contains("destaque")) {
+                alert("O parágrafo possui a classe 'destaque'.");
+            } else {
+                alert("O parágrafo NÃO possui a classe 'destaque'.");
+            }
+        });
+    </script>
+</body>
+</html>

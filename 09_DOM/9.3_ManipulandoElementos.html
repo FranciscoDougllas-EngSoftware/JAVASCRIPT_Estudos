@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ola JavaScript</h1>
+
+    <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Tempore, nostrum?</li>
+        <li>Tempora, nihil!</li>
+    </ul>
+
+    <h2>Testando 123</h2>
+    <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Tempore, nostrum?</li>
+        <li>Tempora, nihil!</li>
+    </ul>
+
+    <button class="btn">Clique aqui</button>
+
+    <script>
+        function addElement() {
+            const ul = document.querySelector('ul');
+            const li = document.createElement('li');
+            li.textContent = 'Novo item adicionado!';
+            ul.appendChild(li);
+
+            for(let i = 0; i < 10; i++) {
+                const li = document.createElement('li');
+                li.textContent = `Novo item ${i + 1} adicionado!`;
+                ul.appendChild(li);
+            }
+            const h1 = document.querySelector('h1');
+        }
+        const button = document.querySelector('.btn');
+        button.addEventListener('click', addElement);
+
+        //prepend - Adiciona o elemento antes do primeiro filho
+        //append - Adiciona o elemento depois do último filho
+        //insertBefore - Adiciona o elemento antes de um elemento específico
+        //replaceChild - Substitui um elemento filho por outro
+        //removeChild - Remove um elemento filho de um elemento pai
+        //remove - Remove o elemento do DOM
+        //cloneNode - Clona um elemento, com ou sem seus filhos
+    </script>
+</body>
+</html>

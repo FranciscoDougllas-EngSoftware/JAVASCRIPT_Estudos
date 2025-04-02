@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de CSS</title>
+</head>
+<body>
+    <h1 style="background-color: red;">Manipulando o CSS Inline</h1>
+
+    <div class="pag">
+        <h2>Manipulando o CSS Inline</h2>
+        <p id="paragrafo">Esse parágrafo vai mudar de cor.</p>
+    </div>
+
+    <button id="btn">Mudar Cor</button>
+    <button id="btn2">Resetar Estilo</button>
+
+    <script>
+        // Selecionando o parágrafo
+        const paragrafo = document.getElementById("paragrafo");
+
+        // Selecionando os botões
+        const btnMudarCor = document.getElementById("btn");
+        const btnResetar = document.getElementById("btn2");
+
+        // Alterando o estilo do parágrafo
+        btnMudarCor.addEventListener("click", function() {
+            paragrafo.style.color = "blue"; // Muda a cor do texto
+            paragrafo.style.fontSize = "20px"; // Muda o tamanho da fonte
+            paragrafo.style.fontWeight = "bold"; // Deixa o texto em negrito
+            paragrafo.style.backgroundColor = "yellow"; // Muda a cor de fundo
+        });
+
+        // Resetando o estilo do parágrafo
+        btnResetar.addEventListener("click", function() {
+            paragrafo.style.color = ""; // Remove a cor do texto
+            paragrafo.style.fontSize = ""; // Remove o tamanho da fonte
+            paragrafo.style.fontWeight = ""; // Remove o negrito
+            paragrafo.style.backgroundColor = ""; // Remove a cor de fundo
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Atributos</title>
+</head>
+<body>
+    <h1 id="titulo" class="titulo-principal" data-info="exemplo">Olá, DOM!</h1>
+    <button id="alterarAtributos">Alterar Atributos</button>
+    <button id="removerAtributos">Remover Atributos</button>
+
+    <script>
+        // Selecionando o elemento <h1>
+        const h1 = document.getElementById("titulo");
+
+        // Selecionando os botões
+        const btnAlterar = document.getElementById("alterarAtributos");
+        const btnRemover = document.getElementById("removerAtributos");
+
+        // Alterando atributos
+        btnAlterar.addEventListener("click", function() {
+            h1.setAttribute("class", "novo-titulo"); // Altera a classe
+            h1.setAttribute("data-info", "novo-valor"); // Altera o atributo data-info
+            h1.setAttribute("style", "color: blue; font-size: 24px;"); // Adiciona estilo inline
+            alert("Atributos alterados!");
+        });
+
+        // Removendo atributos
+        btnRemover.addEventListener("click", function() {
+            h1.removeAttribute("class"); // Remove a classe
+            h1.removeAttribute("data-info"); // Remove o atributo data-info
+            h1.removeAttribute("style"); // Remove o estilo inline
+            alert("Atributos removidos!");
+        });
+
+        // Exibindo atributos no console
+        console.log("ID:", h1.getAttribute("id")); // Obtém o valor do atributo id
+        console.log("Classe:", h1.getAttribute("class")); // Obtém o valor do atributo class
+        console.log("Data-info:", h1.getAttribute("data-info")); // Obtém o valor do atributo data-info
+    </script>
+</body>
+</html>

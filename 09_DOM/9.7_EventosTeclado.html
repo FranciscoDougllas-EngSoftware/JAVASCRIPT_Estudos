@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Teclado</title>
+</head>
+<body>
+    <h1>Eventos de Teclado</h1>
+    <input type="text" id="campoTexto" placeholder="Digite algo..." />
+    <p id="mensagem"></p>
+
+    <script>
+        // Selecionando o campo de texto e o parágrafo
+        const campoTexto = document.getElementById("campoTexto");
+        const mensagem = document.getElementById("mensagem");
+
+        // Evento keydown (quando uma tecla é pressionada)
+        campoTexto.addEventListener("keydown", function(event) {
+            mensagem.textContent = `Tecla pressionada: ${event.key}`;
+        });
+
+        // Evento keyup (quando uma tecla é liberada)
+        campoTexto.addEventListener("keyup", function(event) {
+            mensagem.textContent = `Tecla liberada: ${event.key}`;
+        });
+
+        // Evento keypress (quando uma tecla é pressionada e mantida - OBS: obsoleto em navegadores modernos)
+        campoTexto.addEventListener("keypress", function(event) {
+            console.log(`Tecla pressionada (keypress): ${event.key}`);
+        });
+
+        // Evento input (quando o valor do campo muda)
+        campoTexto.addEventListener("input", function(event) {
+            mensagem.textContent = `Valor atual: ${event.target.value}`;
+        });
+
+        // Evento focus (quando o campo recebe foco)
+        campoTexto.addEventListener("focus", function() {
+            mensagem.textContent = "Campo de texto focado.";
+        });
+
+        // Evento blur (quando o campo perde o foco)
+        campoTexto.addEventListener("blur", function() {
+            mensagem.textContent = "Campo de texto perdeu o foco.";
+        });
+    </script>
+</body>
+</html>

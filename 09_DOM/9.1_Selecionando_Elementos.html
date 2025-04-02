@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">Ola JavaScript</h1>
+    <p class="paragrafo">Este é um parágrafo.</p>
+    <p class="paragrafo">Outro parágrafo.</p>
+    <div name="meuDiv">Div com atributo name</div>
+
+    <script>
+        // Selecionando pelo ID
+        const h1 = document.getElementById("titulo");
+        h1.addEventListener("click", function() {
+            h1.style.color = "red";
+            h1.style.backgroundColor = "black";
+        });
+
+        // Selecionando pela classe
+        const paragrafos = document.getElementsByClassName("paragrafo");
+        for (let p of paragrafos) {
+            p.addEventListener("click", function() {
+                p.style.color = "blue";
+            });
+        }
+
+        // Selecionando pela tag
+        const divs = document.getElementsByTagName("div");
+        for (let div of divs) {
+            div.addEventListener("click", function() {
+                div.style.backgroundColor = "yellow";
+            });
+        }
+
+        // Selecionando pelo seletor CSS (querySelector)
+        const primeiroParagrafo = document.querySelector(".paragrafo");
+        primeiroParagrafo.addEventListener("click", function() {
+            primeiroParagrafo.style.fontWeight = "bold";
+        });
+
+        // Selecionando todos os elementos pelo seletor CSS (querySelectorAll)
+        const todosParagrafos = document.querySelectorAll(".paragrafo");
+        todosParagrafos.forEach(function(p) {
+            p.addEventListener("click", function() {
+                p.style.fontStyle = "italic";
+            });
+        });
+
+        // Selecionando pelo atributo name
+        const divComName = document.getElementsByName("meuDiv")[0];
+        divComName.addEventListener("click", function() {
+            divComName.style.border = "2px solid green";
+        });
+    </script>
+</body>
+</html>
