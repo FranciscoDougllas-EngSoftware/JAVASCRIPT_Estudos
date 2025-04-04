@@ -1,8 +1,2 @@
-let char = new Knight('Francisco');
-let monster = new LittleMonster();
-
-const stage = new Stage(
-    char, monster, 
-    document.querySelector("#char"),
-    document.querySelector("#monster")
-);
+const char = createKnight('Lutador 1');
+console.log(char.life);
