@@ -15,8 +15,4 @@ class Person {
         this.name = name; // Atribui o valor do parâmetro name à propriedade name do objeto atual
         this.age = age;   // Atribui o valor do parâmetro age à propriedade age do objeto atual
     }
-
-    greet() {
-        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
-    }
 }
